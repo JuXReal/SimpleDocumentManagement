@@ -28,3 +28,15 @@ I am sorry that i have to use old versions of some scripts. I hope i can get it 
 
 IMPORTANT NOTE:
 If all works fine, you can access your Scanned Files via Http. Take care that you never releaser your Stuff to the Internet! 
+
+
+
+How to install:
+
+sudo apt-get install git
+
+git clone https://github.com/juxreal/SimpleDocumentManagment
+
+Chmod -x SDM.sh
+
+./SDM.sh
