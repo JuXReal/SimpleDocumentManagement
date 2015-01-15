@@ -1,6 +1,6 @@
 #!/bin/bash
 #main path configuration
-sdm_path="/home/pi"
+sdm_path="./"
 #specific path configuration
 sdm_raw="$sdm_path/document-vault/raw"
 sdm_tmp="$sdm_path/document-vault/tmp"
