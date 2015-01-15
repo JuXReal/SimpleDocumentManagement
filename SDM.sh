@@ -42,6 +42,15 @@ echo  "@reboot screen -dmS RecollWebGui bash -c" "cd $sdm_dv/recoll-webui && ./w
 echo "@reboot $sdm_bin/clean.sh > /dev/null 2>&1"  > /etc/crontab
 
 
+#creating the needed Folders
+
+mkdir $sdm_dv/document-vault/
+mkdir $sdm_dv/document-vault/tmp
+mkdir $sdm_dv/document-vault/backup
+mkdir $sdm_dv/document-vault/handled
+mkdir $sdm_dv/document-vault/raw
+
+
 #------------------ delete  all under this line, if you dont want samba -----------------------
 
 
