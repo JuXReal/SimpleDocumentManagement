@@ -36,11 +36,14 @@ echo "-- The Folder is called handeld--"
 
 
 
-echo  "* * * * * sudo $sdm_bin/run.sh > /dev/null 2>&1" > /etc/crontab
-echo "*/5 * * * * $sdm_bin/index.sh > /dev/null 2>&1"> /etc/crontab
-echo  "@reboot screen -dmS RecollWebGui bash -c" "cd $sdm_dv/recoll-webui && ./webui-standalone.py -a localhost -p 8080" > /etc/crontab
-echo "@reboot $sdm_bin/clean.sh > /dev/null 2>&1"  > /etc/crontab
-
+cron1="* * * * * sudo $sdm_bin/run.sh > /dev/null 2>&1"
+crontab -l; echo "$cron1") | crontab -
+cron2="*/5 * * * * $sdm_bin/index.sh > /dev/null 2>&1"
+crontab -l; echo "$cron2") | crontab -
+cron3="@reboot screen -dmS RecollWebGui bash -c cd $sdm_dv/recoll-webui && ./webui-standalone.py -a localhost -p 8080"
+crontab -l; echo "$cron3") | crontab -
+cron4="@reboot $sdm_bin/clean.sh > /dev/null 2>&1"
+crontab -l; echo "$cron4") | crontab -
 
 #creating the needed Folders
 
