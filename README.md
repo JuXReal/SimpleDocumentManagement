@@ -11,6 +11,28 @@ At the end, i hope,  you can access all your scanned documents via webbrowser (h
 
 All your documents should now have fulltext search possibility.
 
+How does it work:
+
+If you scan a document ( .tiff or .pdf ) and put it into the RAW Folder, a script converts .tiff to .pdf ( if the file is a .pdf nothings happend),  and starts the OCRmyPDF script for this file (each File in the RAW Folder).
+
+After this part, you get a searchable PDF.
+
+The next step:
+Recoll (Searchengine) looks for new files at the handeld Folder. If there is a new file, Recoll add this file to his Database.
+
+Now you can use Recoll (with Desktop) to search your documents.
+Example - searching for "billing" will show you, all the Documents with this word.
+
+If you want to search your documents with your Tablett etc. you can access the Recoll Webui via http://IP:8080 .
+
+Now it is possible to search your documents via Webbrowser.
+
+
+You need only one time access to the Raspberry desktop!
+Only to point Recoll to the handeld directory.
+You dont need access the desktop again!
+
+
 Know Issus:  German "Umlaute" Ä / Ü / Ö etc doesent work well.  
 
 At this point i want to say Thanks! to:
