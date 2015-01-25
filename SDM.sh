@@ -61,9 +61,9 @@ smbpasswd -a $sdm_user
 
 #
 chown -R $sdm_user:$sdm_user $sdm_raw
-echo "[TestFreigabe]" > /etc/samba/smb.conf
-echo "path = $sdm_raw" > /etc/samba/smb.conf
-echo "writeable = yes" > /etc/samba/smb.conf
-echo "guest ok  = no" > /etc/samba/smb.conf
+echo "[TestFreigabe]" >> /etc/samba/smb.conf
+echo "path = $sdm_raw" >> /etc/samba/smb.conf
+echo "writeable = yes" >> /etc/samba/smb.conf
+echo "guest ok  = no" >> /etc/samba/smb.conf
 
 sudo /etc/init.d/samba restart
