@@ -5,9 +5,9 @@
 
 #chmod for the scripts
 
-chmod +x $sdm_bin/run.sh
-chmod +x $sdm_bin/index.sh
-chmod +x $sdm_bin/clean.sh
+chmod +x "$sdm_bin/run.sh"
+chmod +x "$sdm_bin/index.sh"
+chmod +x "$sdm_bin/clean.sh"
 
 
 #Tools we need
@@ -39,7 +39,7 @@ mv "$sdm_dv/recoll-webui-1.18.1" "$sdm_dv/recoll-webui"
 rm "$sdm_webo"
 cp "$sdm_webn" "$sdm_webp" 
 
-chmod +x $sdm_webo
+chmod +x "$sdm_webo"
 
 # create new cronjobs
 cron1="* * * * * sudo $sdm_bin/run.sh > /dev/null 2>&1"
