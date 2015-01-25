@@ -60,7 +60,7 @@ echo "--- Now you have to set your Samba passwort for User Pi"
 smbpasswd -a $sdm_user
 
 #
-chown -R $sdm_user:$sdm_user /home/pi/document-vault/raw
+chown -R $sdm_user:$sdm_user $sdm_raw
 echo "[TestFreigabe]" > /etc/samba/smb.conf
 echo "path = $sdm_raw" > /etc/samba/smb.conf
 echo "writeable = yes" > /etc/samba/smb.conf
