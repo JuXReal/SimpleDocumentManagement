@@ -2,5 +2,5 @@
 
 * * * * * sudo /home/pi/simpledocumentmanagment/bin/run.sh
 */5 * * * * /home/pi/simpledocumentmanagment/bin/index.sh
-@reboot screen -dmS RecollWebGui bash -c cd /home/pi/simpledocumentmanagment/bin/recoll-webui && ./webui-standalone.py -a localhost -p 8080
+@reboot screen -dmS RecollWebGui bash -c "cd /home/pi/simpledocumentmanagment/bin/recoll-webui && ./webui-standalone.py -a [IP] -p 8080"
 @reboot /home/pi/simpledocumentmanagment/bin/clean.sh > /dev/null 2>&1
