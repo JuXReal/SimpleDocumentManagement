@@ -41,15 +41,31 @@ cp "$sdm_webn" "$sdm_webp"
 
 chmod +x "$sdm_webo"
 
+# Old Code
+
 # create new cronjobs
-cron1="* * * * * sudo $sdm_bin/run.sh > /dev/null 2>&1"
-crontab -l echo "$cron1" | crontab -
-cron2="*/5 * * * * $sdm_bin/index.sh > /dev/null 2>&1"
-crontab -l echo "$cron2" | crontab -
-cron3="@reboot screen -dmS RecollWebGui bash -c cd $sdm_dv/recoll-webui && ./webui-standalone.py -a localhost -p 8080"
-crontab -l echo "$cron3" | crontab -
-cron4="@reboot $sdm_bin/clean.sh > /dev/null 2>&1"
-crontab -l echo "$cron4" | crontab -
+#cron1="* * * * * sudo $sdm_bin/run.sh > /dev/null 2>&1"
+#crontab -l echo "$cron1" | crontab -
+#cron2="*/5 * * * * $sdm_bin/index.sh > /dev/null 2>&1"
+#crontab -l echo "$cron2" | crontab -
+#cron3="@reboot screen -dmS RecollWebGui bash -c cd $sdm_dv/recoll-webui && ./webui-standalone.py -a localhost -p 8080"
+#crontab -l echo "$cron3" | crontab -
+#cron4="@reboot $sdm_bin/clean.sh > /dev/null 2>&1"
+#crontab -l echo "$cron4" | crontab -
+
+#Add cronjobs
+
+crontab -l | { cat; echo "* * * * * sudo $sdm_bin/run.sh > /dev/null 2>&1"; } | crontab -
+
+crontab -l | { cat; echo "*/5 * * * * $sdm_bin/index.sh > /dev/null 2>&1"; } | crontab -
+
+crontab -l | { cat; echo "@reboot screen -dmS RecollWebGui bash -c "cd $sdm_dv/recoll-webui && ./webui-standalone.py -a localhost -p 8080"
+"; } | crontab -
+
+crontab -l | { cat; echo "@reboot $sdm_bin/clean.sh > /dev/null 2>&1"; } | crontab -
+
+
+
 
 #creating Folders
 mkdir $sdm_dv/document-vault/
@@ -57,7 +73,8 @@ mkdir $sdm_dv/document-vault/tmp
 mkdir $sdm_dv/document-vault/backup
 mkdir $sdm_dv/document-vault/handled
 mkdir $sdm_dv/document-vault/raw
-
+chmod 755 -R "$sdm_dv/document-vault/
+"
 
 #------------------ delete  all under this line, if you dont want samba -----------------------
 
