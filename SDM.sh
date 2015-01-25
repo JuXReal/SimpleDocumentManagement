@@ -65,8 +65,7 @@ mkdir $sdm_dv/document-vault/tmp
 mkdir $sdm_dv/document-vault/backup
 mkdir $sdm_dv/document-vault/handled
 mkdir $sdm_dv/document-vault/raw
-chmod 755 -R "$sdm_dv/document-vault/
-"
+chmod 755 -R "$sdm_dv/document-vault/"
 
 #------------------ delete  all under this line, if you dont want samba -----------------------
 
@@ -78,7 +77,7 @@ echo "--- Now you have to set your Samba passwort for User Pi"
 
 smbpasswd -a $sdm_user
 
-#
+
 chown -R $sdm_user:$sdm_user $sdm_raw
 echo "[input Raw]" >> /etc/samba/smb.conf
 echo "path = $sdm_raw" >> /etc/samba/smb.conf
