@@ -2,6 +2,14 @@
 
 . ./contrib/config.sh
 
+
+#chmod for the scripts
+
+chmod +x $sdm_bin/run.sh
+chmod +x $sdm_bin/index.sh
+chmod +x $sdm_bin/clean.sh
+
+
 #Tools we need
 
 apt-get install ghostscript libtiff-tools imageMagick pdftk tesseract-ocr bc python-reportlab python-lxml oracle-java7-jdk screen -y
@@ -30,6 +38,8 @@ mv "$sdm_dv/recoll-webui-1.18.1" "$sdm_dv/recoll-webui"
 #Remove old Web-Recoll.py and use the new 
 rm "$sdm_webo"
 cp "$sdm_webn" "$sdm_webp" 
+
+chmod +x $sdm_webo
 
 # create new cronjobs
 cron1="* * * * * sudo $sdm_bin/run.sh > /dev/null 2>&1"

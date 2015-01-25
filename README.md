@@ -55,6 +55,9 @@ Take care that you never releaser your Stuff to the Internet!
 
 How to install:
 
+First setup your installation folder at ~/contrib/config.sh
+
+
 sudo apt-get install git
 
 git clone https://github.com/juxreal/SimpleDocumentManagment
