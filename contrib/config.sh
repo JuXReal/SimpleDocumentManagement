@@ -14,3 +14,6 @@ sdm_ocr="$sdm_path/bin/OCRmyPDF/OCRmyPDF.sh"
 sdm_webo="$sdm_path/recoll-webui/webui-standalone.py"
 sdm_webn="$sdm_path/bin/webui-standalone.py"
 sdm_webp="$sdm_path/recoll-webui/"
+
+#Here you can change the user.
+sdm_user="pi"
