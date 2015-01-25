@@ -24,7 +24,7 @@ apt-get install recoll python-recoll -y
 
 mkdir ~/.recoll
 
-echo "topdirs = $sdm_handled" > ~/recoll/recoll.conf
+echo "topdirs = $sdm_handled" > ~/.recoll/recoll.conf
 
 
 #Now we get the Webinterface
