@@ -41,29 +41,21 @@ cp "$sdm_webn" "$sdm_webp"
 
 chmod +x "$sdm_webo"
 
-# Old Code
-
-# create new cronjobs
-#cron1="* * * * * sudo $sdm_bin/run.sh > /dev/null 2>&1"
-#crontab -l echo "$cron1" | crontab -
-#cron2="*/5 * * * * $sdm_bin/index.sh > /dev/null 2>&1"
-#crontab -l echo "$cron2" | crontab -
-#cron3="@reboot screen -dmS RecollWebGui bash -c cd $sdm_dv/recoll-webui && ./webui-standalone.py -a localhost -p 8080"
-#crontab -l echo "$cron3" | crontab -
-#cron4="@reboot $sdm_bin/clean.sh > /dev/null 2>&1"
-#crontab -l echo "$cron4" | crontab -
-
 #Add cronjobs
 
-crontab -l | { cat; echo "* * * * * sudo $sdm_bin/run.sh > /dev/null 2>&1"; } | crontab -
+cron1="sudo $sdm_bin/run.sh > /dev/null 2>&1"
+job1="* * * * * $cron1"
+cron2="$sdm_bin/index.sh > /dev/null 2>&1"
+job2="*/5 * * * * $cron2"
+cron3="screen -dmS RecollWebGui bash -c cd $sdm_dv/recoll-webui && ./webui-standalone.py -a localhost -p 8080""
+job3="@reboot"
+cron4="$sdm_bin/clean.sh > /dev/null 2>&1"
+job4="@reboot"
 
-crontab -l | { cat; echo "*/5 * * * * $sdm_bin/index.sh > /dev/null 2>&1"; } | crontab -
-
-crontab -l | { cat; echo "@reboot screen -dmS RecollWebGui bash -c "cd $sdm_dv/recoll-webui && ./webui-standalone.py -a localhost -p 8080"
-"; } | crontab -
-
-crontab -l | { cat; echo "@reboot $sdm_bin/clean.sh > /dev/null 2>&1"; } | crontab -
-
+cat <(fgrep -i -v "$cron1" <(crontab -l)) <(echo "$job1") | crontab -
+cat <(fgrep -i -v "$cron2" <(crontab -l)) <(echo "$job2") | crontab -
+cat <(fgrep -i -v "$cron3" <(crontab -l)) <(echo "$job3") | crontab -
+cat <(fgrep -i -v "$cron4" <(crontab -l)) <(echo "$job4") | crontab -
 
 
 
