@@ -51,10 +51,11 @@ chmod +x "$sdm_webo"
 #Add cronjobs
 
 crontab -l -u $sdm_user > oldcrontab
+
 #echo new cron into cron file
 echo "$sdm_cron1" >> oldcrontab
 echo "$sdm_cron2" >> oldcrontab
-echo "$sdm_cron3  "$myIP -p 8080"" >> oldcrontab
+echo $sdm_cron3  $myIP -p 8080 >> oldcrontab
 echo "$sdm_cron4" >> oldcrontab
 
 #install new cron file
