@@ -1,6 +1,6 @@
 #This File is only for manuel adding cronjobs (example)
 
-* * * * * sudo /home/pi/simpledocumentmanagment/bin/run.sh
-*/5 * * * * /home/pi/simpledocumentmanagment/bin/index.sh
+* * * * * sudo /home/pi/simpledocumentmanagment/bin/run.sh > /dev/null 2>&1
+*/5 * * * * /home/pi/simpledocumentmanagment/bin/index.sh > /dev/null 2>&1
 @reboot screen -dmS RecollWebGui bash -c "cd /home/pi/simpledocumentmanagment/recoll-webui && ./webui-standalone.py -a [IP] -p 8080"
 @reboot /home/pi/simpledocumentmanagment/bin/clean.sh > /dev/null 2>&1
