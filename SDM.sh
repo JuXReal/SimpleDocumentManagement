@@ -3,6 +3,8 @@
 . ./contrib/config.sh
 
 
+myIP=$(ip a s|sed -ne '/127.0.0.1/!{s/^[ \t]*inet[ \t]*\([0-9.]\+\)\/.*$/\1/p}')
+
 #chmod for the scripts
 
 chmod +x "$sdm_bin/run.sh"
@@ -48,15 +50,15 @@ chmod +x "$sdm_webo"
 
 #Add cronjobs
 
-crontab -l > oldcrontab
+crontab -l -u $sdm_user > oldcrontab
 #echo new cron into cron file
 echo "$sdm_cron1" >> oldcrontab
 echo "$sdm_cron2" >> oldcrontab
-echo "$sdm_cron3" >> oldcrontab
+echo "$sdm_cron3  $myIP -p 8080" >> oldcrontab
 echo "$sdm_cron4" >> oldcrontab
 
 #install new cron file
-crontab oldcrontab
+crontab -u $sdm_user oldcrontab
 rm oldcrontab
 
 
