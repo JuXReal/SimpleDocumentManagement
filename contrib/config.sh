@@ -13,7 +13,7 @@ sdm_bin="$sdm_path/bin"
 #specific script path configuration
 sdm_run="$sdm_path/bin/run.sh"
 sdm_index="$sdm_path/bin/index.sh"
-sdm_webui="$sdm_path/bin/recoll-webui && ./webui-standalone.py -a"
+sdm_webui="$sdm_path/recoll-webui && ./webui-standalone.py -a"
 sdm_clean="$sdm_path/bin/clean.sh"
 
 
