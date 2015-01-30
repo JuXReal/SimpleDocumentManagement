@@ -87,4 +87,14 @@ echo "path = $sdm_raw" >> /etc/samba/smb.conf
 echo "writeable = yes" >> /etc/samba/smb.conf
 echo "guest ok  = no" >> /etc/samba/smb.conf
 
+echo "[input Raw]" >> /etc/samba/smb.conf
+echo "path = $sdm_raw" >> /etc/samba/smb.conf
+echo "writeable = yes" >> /etc/samba/smb.conf
+echo "guest ok  = no" >> /etc/samba/smb.conf
+
+echo "[handled]" >> /etc/samba/smb.conf
+echo "path = $sdm_handled" >> /etc/samba/smb.conf
+echo "writeable = yes" >> /etc/samba/smb.conf
+echo "guest ok  = no" >> /etc/samba/smb.conf
+
 sudo /etc/init.d/samba restart
