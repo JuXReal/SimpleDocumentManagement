@@ -32,5 +32,5 @@ sdm_user="pi"
 
 sdm_cron1="* * * * * sudo $sdm_run"
 sdm_cron2="*/5 * * * * $sdm_index"
-sdm_cron3="@reboot screen -dmS RecollWebGui bash -c "cd $sdm_webui"
+sdm_cron3="@reboot screen -dmS RecollWebGui bash -c" "cd $sdm_webui"""
 sdm_cron4="@reboot $sdm_clean > /dev/null 2>&1"
