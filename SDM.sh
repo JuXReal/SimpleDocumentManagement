@@ -3,11 +3,18 @@
 . ./contrib/config.sh
 
 
+myIP=$(ip a s|sed -ne '/127.0.0.1/!{s/^[ \t]*inet[ \t]*\([0-9.]\+\)\/.*$/\1/p}')
+
 #chmod for the scripts
 
 chmod +x "$sdm_bin/run.sh"
 chmod +x "$sdm_bin/index.sh"
 chmod +x "$sdm_bin/clean.sh"
+
+chown -R $sdm_user:$sdm_user "$sdm_bin/run.sh"
+chown -R $sdm_user:$sdm_user "$sdm_bin/index.sh"
+chown -R $sdm_user:$sdm_user "$sdm_bin/clean.sh"
+
 
 
 #Tools we need
@@ -43,20 +50,17 @@ chmod +x "$sdm_webo"
 
 #Add cronjobs
 
-cron1="sudo $sdm_bin/run.sh > /dev/null 2>&1"
-job1="* * * * * $cron1"
-cron2="$sdm_bin/index.sh > /dev/null 2>&1"
-job2="*/5 * * * * $cron2"
-cron3="screen -dmS RecollWebGui bash -c cd $sdm_dv/recoll-webui && ./webui-standalone.py -a localhost -p 8080""
-job3="@reboot"
-cron4="$sdm_bin/clean.sh > /dev/null 2>&1"
-job4="@reboot"
+crontab -l -u $sdm_user > oldcrontab
 
-cat <(fgrep -i -v "$cron1" <(crontab -l)) <(echo "$job1") | crontab -
-cat <(fgrep -i -v "$cron2" <(crontab -l)) <(echo "$job2") | crontab -
-cat <(fgrep -i -v "$cron3" <(crontab -l)) <(echo "$job3") | crontab -
-cat <(fgrep -i -v "$cron4" <(crontab -l)) <(echo "$job4") | crontab -
+#echo new cron into cron file
+echo "$sdm_cron1" >> oldcrontab
+echo "$sdm_cron2" >> oldcrontab
+echo $sdm_cron3  $myIP -p 8080 >> oldcrontab
+echo "$sdm_cron4" >> oldcrontab
 
+#install new cron file
+crontab -u $sdm_user oldcrontab
+rm oldcrontab
 
 
 #creating Folders
@@ -71,7 +75,7 @@ chmod 755 -R "$sdm_dv/document-vault/"
 
 apt-get install samba samba-common-bin -y
 
-echo "security = user" > /etc/samba/smb.conf
+echo "security = user" >> /etc/samba/smb.conf
 
 echo "--- Now you have to set your Samba passwort for User Pi"
 
@@ -81,6 +85,11 @@ smbpasswd -a $sdm_user
 chown -R $sdm_user:$sdm_user $sdm_raw
 echo "[input Raw]" >> /etc/samba/smb.conf
 echo "path = $sdm_raw" >> /etc/samba/smb.conf
+echo "writeable = yes" >> /etc/samba/smb.conf
+echo "guest ok  = no" >> /etc/samba/smb.conf
+
+echo "[handled]" >> /etc/samba/smb.conf
+echo "path = $sdm_handled" >> /etc/samba/smb.conf
 echo "writeable = yes" >> /etc/samba/smb.conf
 echo "guest ok  = no" >> /etc/samba/smb.conf
 
