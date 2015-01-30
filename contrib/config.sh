@@ -17,3 +17,10 @@ sdm_webp="$sdm_path/recoll-webui/"
 
 #Here you can change the user.
 sdm_user="pi"
+
+#Cronjobs
+
+sdm_cron1="* * * * * sudo /home/pi/simpledocumentmanagment/bin/run.sh"
+sdm_cron2="*/5 * * * * /home/pi/simpledocumentmanagment/bin/index.sh"
+sdm_cron3="@reboot screen -dmS RecollWebGui bash -c "cd /home/pi/simpledocumentmanagment/bin/recoll-webui && ./webui-standalone.py -a [IP] -p 8080""
+sdm_cron4="@reboot /home/pi/simpledocumentmanagment/bin/clean.sh > /dev/null 2>&1"
