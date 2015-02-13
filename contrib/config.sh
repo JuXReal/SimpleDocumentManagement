@@ -4,7 +4,7 @@
 sdm_user="pi"
 
 #main path configuration
-sdm_path="/home/${sdm_user}/Simpledocumentmanagment"
+sdm_path="/home/${sdm_user}/SimpleDocumentManagement"
 
 
 #specific path configuration

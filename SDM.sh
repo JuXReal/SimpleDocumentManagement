@@ -27,16 +27,16 @@ echo "topdirs = $sdm_handled" > ~/.recoll/recoll.conf
 #Now we get the Webinterface
 wget https://github.com/koniu/recoll-webui/archive/v1.18.1.zip $sdm_dv
 
-unzip "$sdm_dv/v1.18.1.zip"
-rm "$sdm_dv/v1.18.1.zip"
-mv "$sdm_dv/recoll-webui-1.18.1" "$sdm_dv/recoll-webui"
+unzip $sdm_dv/v1.18.1.zip
+rm $sdm_dv/v1.18.1.zip
+mv $sdm_dv/recoll-webui-1.18.1 $sdm_dv/recoll-webui
 
 
 #Remove old Web-Recoll.py and use the new 
-rm "$sdm_webo"
-cp "$sdm_webn" "$sdm_webp" 
+rm $sdm_webo
+cp $sdm_webn $sdm_webp 
 
-chmod +x "$sdm_webo"
+chmod +x $sdm_webo
 
 #Add cronjobs
 crontab -l -u $sdm_user > oldcrontab
