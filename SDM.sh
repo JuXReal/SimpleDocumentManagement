@@ -5,16 +5,6 @@
 
 myIP=$(ip a s|sed -ne '/127.0.0.1/!{s/^[ \t]*inet[ \t]*\([0-9.]\+\)\/.*$/\1/p}')
 
-#chmod for the scripts
-
-chmod +x "$sdm_bin/run.sh"
-chmod +x "$sdm_bin/index.sh"
-chmod +x "$sdm_bin/clean.sh"
-
-chown -R $sdm_user:$sdm_user "$sdm_bin/run.sh"
-chown -R $sdm_user:$sdm_user "$sdm_bin/index.sh"
-chown -R $sdm_user:$sdm_user "$sdm_bin/clean.sh"
-
 
 
 #Tools we need
@@ -49,7 +39,6 @@ cp "$sdm_webn" "$sdm_webp"
 chmod +x "$sdm_webo"
 
 #Add cronjobs
-
 crontab -l -u $sdm_user > oldcrontab
 
 #echo new cron into cron file
@@ -63,8 +52,6 @@ crontab -u $sdm_user oldcrontab
 rm oldcrontab
 
 
-#creating Folders
-
 # create with parent
 mkdir -p $sdm_vault
 mkdir $sdm_tmp
@@ -72,6 +59,13 @@ mkdir $sdm_backup
 mkdir $sdm_handled
 mkdir $sdm_raw
 chmod 755 -R $sdm_vault
+
+
+#chmod for the scripts
+chown -R $sdm_user:$sdm_user "$sdm_bin/run.sh"
+chown -R $sdm_user:$sdm_user "$sdm_bin/index.sh"
+chown -R $sdm_user:$sdm_user "$sdm_bin/clean.sh"
+
 
 samba_install() {
 apt-get install samba samba-common-bin -y
