@@ -64,15 +64,16 @@ rm oldcrontab
 
 
 #creating Folders
-mkdir $sdm_dv/document-vault/
-mkdir $sdm_dv/document-vault/tmp
-mkdir $sdm_dv/document-vault/backup
-mkdir $sdm_dv/document-vault/handled
-mkdir $sdm_dv/document-vault/raw
-chmod 755 -R "$sdm_dv/document-vault/"
 
-#------------------ delete  all under this line, if you dont want samba -----------------------
+# create with parent
+mkdir -p $sdm_vault
+mkdir $sdm_tmp
+mkdir $sdm_backup
+mkdir $sdm_handled
+mkdir $sdm_raw
+chmod 755 -R $sdm_vault
 
+samba_install() {
 apt-get install samba samba-common-bin -y
 
 echo "security = user" >> /etc/samba/smb.conf
@@ -94,3 +95,8 @@ echo "writeable = yes" >> /etc/samba/smb.conf
 echo "guest ok  = no" >> /etc/samba/smb.conf
 
 sudo /etc/init.d/samba restart
+}
+
+if [ "$install_samba" == "yes" ] ; then
+ samba_install()
+fi
