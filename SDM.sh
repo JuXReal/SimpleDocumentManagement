@@ -13,7 +13,7 @@ apt-get install ghostscript libtiff-tools imageMagick pdftk tesseract-ocr bc pyt
 
 #settings the permissions
 
-chmod 755 "$sdm_OCRmyPDF"
+chmod 755 -R $sdm_ocrmypdf
 
 #Now we have to install Recoll, the Document crawler"
 
@@ -62,9 +62,9 @@ chmod 755 -R $sdm_vault
 
 
 #chmod for the scripts
-chown -R $sdm_user:$sdm_user "$sdm_bin/run.sh"
-chown -R $sdm_user:$sdm_user "$sdm_bin/index.sh"
-chown -R $sdm_user:$sdm_user "$sdm_bin/clean.sh"
+chown -R $sdm_user:$sdm_user "$sdm_run"
+chown -R $sdm_user:$sdm_user "$sdm_index"
+chown -R $sdm_user:$sdm_user "$sdm_clean"
 
 
 samba_install() {
@@ -93,4 +93,6 @@ sudo /etc/init.d/samba restart
 
 if [ "$install_samba" == "yes" ] ; then
  samba_install()
+else
+
 fi
