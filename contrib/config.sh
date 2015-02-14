@@ -4,7 +4,7 @@
 sdm_user="pi"
 
 #main path configuration
-sdm_path="/home/${sdm_user}/simpledocumentmanagment"
+sdm_path="/home/${sdm_user}/SimpleDocumentManagement"
 
 
 #specific path configuration
@@ -15,11 +15,12 @@ sdm_tmp="${sdm_vault}/tmp"
 sdm_handled="${sdm_vault}/handled"
 sdm_backup="${sdm_vault}/backup"
 sdm_bin="${sdm_vault}/bin"
+sdm_ocrmypdf="${sdm_path}/bin/OCRmyPDF"
 
 #specific script path configuration
-sdm_run="$sdm_path/bin/run.sh > /dev/null 2>&1"
-sdm_index="$sdm_path/bin/index.sh > /dev/null 2>&1"
-sdm_clean="$sdm_path/bin/clean.sh > /dev/null 2>&1"
+sdm_run="$sdm_path/bin/run.sh" #> /dev/null 2>&1
+sdm_index="$sdm_path/bin/index.sh" #> /dev/null 2>&1
+sdm_clean="$sdm_path/bin/clean.sh" #> /dev/null 2>&1
 
 
 #OCRmyPDF configuration
