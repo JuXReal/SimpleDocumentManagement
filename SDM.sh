@@ -66,6 +66,12 @@ chown -R $sdm_user:$sdm_user "$sdm_run"
 chown -R $sdm_user:$sdm_user "$sdm_index"
 chown -R $sdm_user:$sdm_user "$sdm_clean"
 
+#make the scripts exc.
+
+chmod +x $sdm_run
+chmod +x $sdm_index
+chmod +x $sdm_clean
+
 
 samba_install() {
 apt-get install samba samba-common-bin -y
