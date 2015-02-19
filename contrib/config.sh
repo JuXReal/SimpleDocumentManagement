@@ -36,7 +36,7 @@ sdm_webp="$sdm_path/recoll-webui/"
 
 sdm_cron1="* * * * * sudo $sdm_run"
 sdm_cron2="*/5 * * * * $sdm_index"
-sdm_cron3="@reboot screen -dmS RecollWebGui bash -c "cd $sdm_path/recoll-webui && ./webui-standalone.py -a""
+sdm_cron3="@reboot screen -dmS RecollWebGui bash -c \"cd $sdm_path/recoll-webui && ./webui-standalone.py -a"
 sdm_cron4="@reboot $sdm_clean"
 
 # Change to anything else than "yes" to NOT install Samba
