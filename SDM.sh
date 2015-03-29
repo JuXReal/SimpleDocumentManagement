@@ -101,6 +101,4 @@ sudo /etc/init.d/samba restart
 
 if [ "$install_samba" == "yes" ] ; then
  samba_install()
-else
-
 fi
