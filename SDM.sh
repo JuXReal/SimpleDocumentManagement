@@ -72,6 +72,8 @@ chmod +x $sdm_run
 chmod +x $sdm_index
 chmod +x $sdm_clean
 
+#own folder structure none root user
+chown -R $sdm_user:$sdm_group $sdm_path
 
 samba_install() {
 apt-get install samba samba-common-bin -y
