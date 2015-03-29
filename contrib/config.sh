@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# Here you can change the user.
+# User and group of document management system
 sdm_user="pi"
+sdm_group="pi"
 
-#main path configuration
+# Main path configuration
 sdm_path="/home/${sdm_user}/SimpleDocumentManagement"
 
-
-#specific path configuration
+# Specific path configuration
 sdm_dv="${sdm_path}"
 sdm_vault="${sdm_dv}/document-vault"
 sdm_raw="${sdm_vault}/raw"
@@ -17,23 +17,20 @@ sdm_backup="${sdm_vault}/backup"
 sdm_bin="${sdm_vault}/bin"
 sdm_ocrmypdf="${sdm_path}/bin/OCRmyPDF"
 
-#specific script path configuration
+# Specific script path configuration
 sdm_run="$sdm_path/bin/run.sh" #> /dev/null 2>&1
 sdm_index="$sdm_path/bin/index.sh" #> /dev/null 2>&1
 sdm_clean="$sdm_path/bin/clean.sh" #> /dev/null 2>&1
 
-
-#OCRmyPDF configuration
+# OCRmyPDF configuration
 sdm_ocr="$sdm_path/bin/OCRmyPDF/OCRmyPDF.sh"
 
-#specific_path WebUi
+# Specific path WebUi
 sdm_webo="$sdm_path/recoll-webui/webui-standalone.py"
 sdm_webn="$sdm_path/bin/webui-standalone.py"
 sdm_webp="$sdm_path/recoll-webui/"
 
-
-#Cronjobs
-
+# Cronjobs
 sdm_cron1="* * * * * sudo $sdm_run"
 sdm_cron2="*/5 * * * * $sdm_index"
 sdm_cron3="@reboot screen -dmS RecollWebGui bash -c \"cd $sdm_path/recoll-webui && ./webui-standalone.py -a"
