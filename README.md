@@ -8,16 +8,18 @@ SimpleDocumentManagement is a lightweight solution for digital document manageme
 
 1. Clone or download the project from GitHub
 1. Change the configurations at ~/contrib/config.sh
-3. Run the installer SDM.sh as root user
+3. Run the installer SDM.sh
 
 In the following the commands
+```
 sudo apt-get install git
 git clone https://github.com/juxreal/SimpleDocumentManagment
 cd SimpleDocumentManagment
 nano contrib/config.sh
 
 chmod -x SDM.sh
-sudo ./SDM.sh
+./SDM.sh
+```
 
 ## IMPORTANT NOTE for Samba
 
