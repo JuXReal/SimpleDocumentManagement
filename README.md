@@ -14,7 +14,7 @@ In the following the commands
 ```
 sudo apt-get install git
 git clone https://github.com/juxreal/SimpleDocumentManagment
-cd SimpleDocumentManagment
+cd SimpleDocumentManagement
 nano contrib/config.sh
 
 chmod -x SDM.sh
@@ -25,7 +25,7 @@ chmod -x SDM.sh
 
 This script installs a Samba server for user "pi". If you have Samba already installed, you can have some trouble.
 
-If you do not want the Samba, please remove the part from SDM.sh (installer).
+If you do not want the Samba, please disable it in the config (contrib/config.sh).
 
 ## General
 
