@@ -17,8 +17,8 @@ git clone https://github.com/juxreal/SimpleDocumentManagment
 cd SimpleDocumentManagement
 nano contrib/config.sh
 
-chmod -x SDM.sh
-./SDM.sh
+chmod +x SDM.sh
+sudo ./SDM.sh
 ```
 
 ## IMPORTANT NOTE for Samba
