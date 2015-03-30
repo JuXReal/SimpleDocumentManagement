@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Check lockfile
 if [ -f index.lock ]
 then
