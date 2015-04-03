@@ -13,7 +13,7 @@ SimpleDocumentManagement is a lightweight solution for digital document manageme
 In the following the commands
 ```
 sudo apt-get install git
-git clone https://github.com/juxreal/SimpleDocumentManagment
+git clone https://github.com/juxreal/SimpleDocumentManagement
 cd SimpleDocumentManagement
 nano contrib/config.sh
 
