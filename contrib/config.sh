@@ -37,4 +37,4 @@ sdm_cron3="@reboot screen -dmS RecollWebGui bash -c \"cd $sdm_path/recoll-webui 
 sdm_cron4="@reboot cd $sdm_path/bin && ./clean.sh"
 
 # Change to anything else than "yes" to NOT install Samba
-install_samba="yes"
+install_samba=true
