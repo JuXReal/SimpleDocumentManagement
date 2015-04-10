@@ -39,7 +39,7 @@ chmod 755 -R $sdm_ocrmypdf
 # Install Recoll (document search engine)
 apt-get install recoll python-recoll -y
 #mkdir ~/.recoll
-echo "topdirs = $sdm_handled" > /home/$sdm_user/.recoll/recoll.conf
+echo "topdirs = $sdm_handled" > "/home/$sdm_user/.recoll/recoll.conf"
 
 # Get webinterface
 wget https://github.com/koniu/recoll-webui/archive/v1.18.1.zip $sdm_dv
