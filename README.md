@@ -41,8 +41,11 @@ If you want to search your documents with your e.g. tablet you can access the Re
 
 ## Notice
 
-- You need only one time access to the Raspberry desktop!
 - Take care that you never release your Stuff to the Internet!
+
+In some cases it can be possible, that you cant see any files ( located at /home/USER/.recoll ). So the script cant added the right link to your files. 
+
+First reboot your device, than use the recollfix.sh  ( sudo chmod +x recollfix.sh  and then sudo ./recoll.sh )
 
 ## Know issues
 
