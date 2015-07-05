@@ -1,6 +1,6 @@
 #!/bin/bash
 # Clean up lockfile
-rm index.lock
-rm run.lock
+sudo rm index.lock
+sudo rm run.lock
  
 echo  "----- Finish -----"
