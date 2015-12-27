@@ -23,7 +23,7 @@ sdm_index="$sdm_path/bin/index.sh"
 sdm_clean="$sdm_path/bin/clean.sh"
 
 # OCRmyPDF configuration
-sdm_ocr="$sdm_path/bin/OCRmyPDF/OCRmyPDF.sh"
+sdm_ocr="$sdm_path/bin/OCRmyPDF/OCRmyPDF.sh -d -l deu"
 
 # Specific path WebUi
 sdm_webo="$sdm_path/recoll-webui/webui-standalone.py"

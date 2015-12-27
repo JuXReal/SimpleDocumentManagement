@@ -9,6 +9,10 @@ then
     exit
 fi
 date +%s > run.lock
+
+# checking for blanks an remove them
+find $sdm_raw -name “* *” -type f | rename ‘s/ /_/g’
+
 # Create a backup from input files and move files for ocr to tmp/
 cp $sdm_raw/* $sdm_backup/
 mv $sdm_raw/* $sdm_tmp/
