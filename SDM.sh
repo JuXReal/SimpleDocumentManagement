@@ -31,7 +31,7 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 # Install tools via APT
-apt-get install ghostscript libtiff-tools imageMagick pdftk tesseract-ocr bc python-reportlab python-lxml oracle-java7-jdk screen aspell-de tesseract-ocr-deu -y
+apt-get install ghostscript libtiff-tools imageMagick pdftk tesseract-ocr bc python-reportlab python-lxml  screen oracle-java7-jdk -y
 
 # Set permissions
 chmod 755 -R $sdm_ocrmypdf
