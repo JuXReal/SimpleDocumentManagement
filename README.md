@@ -4,22 +4,27 @@
 
 SimpleDocumentManagement is a lightweight solution for digital document management with OCR, which works on the Raspberry Pi (tested with Raspbian). It based on other projects, create a structure and is an installer for the document management. You will have access to the documents by using a webinterface, an desktop application and samba network share.
 
+It is designed to turn a clean, fresh installed raspberry Pi to a document managment system, with easy functions. 
+
+## Know issues
+
+- German umlauts (äöu etc.) does not work.
+- Use old versions of some scripts because of compatibility.
+
 ## Install instructions
+0. if github is not installed (sudo apt-get install git)
+1. Clone or download the project from GitHub (command: git clone https://github.com/juxreal/SimpleDocumentManagement )
+2. Chnage the folder (command:  cd SimpleDocumentManagement)
+3. Change the configurations at ~/contrib/config.sh (command: nano contrib/config.sh)
+4. Change the permission for the installer. (command: sudo chmod +x SDM.sh)
+5. Run the installer SDM.sh (command: sudo ./SDM.sh)
 
-1. Clone or download the project from GitHub
-1. Change the configurations at ~/contrib/config.sh
-3. Run the installer SDM.sh
+recommend optional commandes (if you have trouble with recoll GUI)
 
-In the following the commands
-```
-sudo apt-get install git
-git clone https://github.com/juxreal/SimpleDocumentManagement
-cd SimpleDocumentManagement
-nano contrib/config.sh
+6. sudo reboot
+7. sudo chmod +x recollfix.sh 
+8. sudo ./recoll.sh
 
-chmod +x SDM.sh
-sudo ./SDM.sh
-```
 
 ## IMPORTANT NOTE for Samba
 
