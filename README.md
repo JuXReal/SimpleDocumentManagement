@@ -11,20 +11,31 @@ It is designed to turn a clean, fresh installed raspberry Pi to a document manag
 - German umlauts (äöu etc.) does not work.
 - Use old versions of some scripts because of compatibility.
 
-## Install instructions
+## Install instructions (detail)
+
 0. if github is not installed (sudo apt-get install git)
 1. Clone or download the project from GitHub (command: git clone https://github.com/juxreal/SimpleDocumentManagement )
 2. Chnage the folder (command:  cd SimpleDocumentManagement)
 3. Change the configurations at ~/contrib/config.sh (command: nano contrib/config.sh)
 4. Change the permission for the installer. (command: sudo chmod +x SDM.sh)
 5. Run the installer SDM.sh (command: sudo ./SDM.sh)
+6. sudo reboot
 
 recommend optional commandes (if you have trouble with recoll GUI)
 
-6. sudo reboot
 7. sudo chmod +x recollfix.sh 
 8. sudo ./recoll.sh
+ 
 
+## Install instructions (just commands)
+1. git clone https://github.com/juxreal/SimpleDocumentManagement
+2. cd SimpleDocumentManagement
+3. OPTIONAL - nano contrib/config.sh (no need, if you want change anything)
+4. sudo chmod +x SDM.sh
+5. sudo ./SDM.sh
+6. sudo reboot
+7. sudo chmod +x recollfix.sh
+8. sudo ./recoll.sh
 
 ## IMPORTANT NOTE for Samba
 
@@ -56,6 +67,12 @@ First reboot your device, than use the recollfix.sh  ( sudo chmod +x recollfix.s
 
 - German umlauts (äöu etc.) does not work well.
 - Use old versions of some scripts because of compatibility.
+
+## Upcomming feature (hopefull)
+- Send documents via Mail to the SDM-Pi
+- Dockr Container
+- Torrent to a full working Image
+
 
 ## Thanks
 
