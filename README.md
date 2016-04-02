@@ -34,8 +34,9 @@ recommend optional commandes (if you have trouble with recoll GUI)
 4. sudo chmod +x SDM.sh
 5. sudo ./SDM.sh
 6. sudo reboot
-7. sudo chmod +x recollfix.sh
-8. sudo ./recoll.sh
+7. cd SimpleDocumentManagement
+8. sudo chmod +x recollfix.sh
+9. sudo ./recollfix.sh
 
 ## IMPORTANT NOTE for Samba
 
