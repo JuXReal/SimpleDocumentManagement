@@ -1,10 +1,17 @@
 # SimpleDocumentManagement
 
-IMPORTANT NOTE: 
-This scirpts works only with Debian Wheezy at the moment (10.04.2016) - Based on a Problem with OCRmyPDF in Jessie, i have to fix the code there. Work in Progress. (10.04.2016)
+# IMPORTANT NOTE: 
 
-Wheezy complete image (16gb):
+This scirpts works only with Debian Wheezy at the moment (10.04.2016)
+
+Based on a Problem with OCRmyPDF in Jessie. I try to fix the code soon as possible. Work in Progress. (10.04.2016)
+
+Here is a full image (tested with Raspberry B).
+
+#Wheezy complete image (16gb):
+
 ip: 192.168.1.214
+
 Webui: 192.168.1.214:8080
 
 User: pi
