@@ -3,7 +3,22 @@
 IMPORTANT NOTE: 
 This scirpts works only with Debian Wheezy at the moment (10.04.2016) - Based on a Problem with OCRmyPDF in Jessie, i have to fix the code there. Work in Progress. (10.04.2016)
 
-A Wheezy Complete ready to use image is availible in a few hour! (10.04.2016)
+Wheezy complete image (16gb):
+ip: 192.168.1.214
+Webui: 192.168.1.214:8080
+
+User: pi
+PW: sdm
+
+samba: pi
+pw: sdm
+
+direct link: follow
+
+via Bittorrent Sync (6mbit upload max)
+
+https://link.getsync.com/#f=btsync&sz=0&t=2&s=TDJTWEF5OSFRO6AZ2QMKJZADK3R6E5BNBFMP6SJQZQPUXZ44HEUQ&i=C6VS2UBKGFNHPWMWCORFPO3OY6CMGYTSJ&v=2.0
+
 
 ## What is SimpleDocumentManagement?
 
