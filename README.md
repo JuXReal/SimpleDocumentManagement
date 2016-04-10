@@ -1,5 +1,10 @@
 # SimpleDocumentManagement
 
+IMPORTANT NOTE: 
+This scirpts works only with Debian Wheezy at the moment (10.04.2016) - Based on a Problem with OCRmyPDF in Jessie, i have to fix the code there. Work in Progress. (10.04.2016)
+
+A Wheezy Complete ready to use image is availible in a few hour! (10.04.2016)
+
 ## What is SimpleDocumentManagement?
 
 SimpleDocumentManagement is a lightweight solution for digital document management with OCR, which works on the Raspberry Pi (tested with Raspbian). It based on other projects, create a structure and is an installer for the document management. You will have access to the documents by using a webinterface, an desktop application and samba network share.
