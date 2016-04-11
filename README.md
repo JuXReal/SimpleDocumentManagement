@@ -20,7 +20,7 @@ PW: sdm
 samba: pi
 pw: sdm
 
-direct link: follow
+direct link: https://drive.google.com/file/d/0B1tbu3UfDVAWb1hOaC1KMUVPWkk/view?usp=sharing
 
 via Bittorrent Sync (6mbit upload max)
 
